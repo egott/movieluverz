@@ -1,0 +1,19 @@
+<h3><%=@movie.Title%></h3>
+<h5>Produced: <%=@movie.Year%></h5>
+<br>
+
+<p><%=@movie.Rating%> | <%=@movie.Runtime%> | <%=@movie.Genre%> | <%=@movie.Release%></p>
+
+<img src="<%=@movie.Poster%>" alt="movie-poster">
+
+<br>
+<br>
+<div class="container">
+
+  <p style="font-weight: bold;"><%=@movie.Plot%></p>
+  <p>Staring: <%=@movie.Actors %></p>
+  <% if @movie.imdbRating.to_a.any? %>
+    <p>Rating: <%=@movie.imdbRating %></p>
+  <% end %>
+  <p>Awards: <%=@movie.Awards%></p>
+</div>

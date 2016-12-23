@@ -1,0 +1,18 @@
+<div class="movie-list container">
+  <% @searched_movies.each do |movie| %>
+  <ul class="movie-list">
+    <li><h1><a href="/movies/<%=movie.id%>"><%= movie.Title %></a></h1></li>
+    <img src="<%=movie.Poster%>" alt="movie-poster">
+    <br>
+    <br>
+    <br>
+    <br>
+    <% if logged_in? %>
+    <div class="container">
+      <form action="/users/<%=current_user.id%>/movies/<%=movie.id%>" method="post">
+        <input type="submit" value="Add to favorites">
+      </form>
+    </div>
+    <% end %>
+  <% end %>
+</div>

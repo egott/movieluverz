@@ -1,0 +1,19 @@
+<div class="container">
+
+  <h3 style="text-align:center;">Welcome, <%=@user.username %></h3>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h5>Your favorited movies</h5>
+    <% @user.favorites.each do |favorite| %>
+    <div class="container">
+
+      <ul>
+        <li> <a href="/movies/<%=favorite.movie.id%>"><%=favorite.movie.Title%></a></li>
+      </ul>
+    </div>
+    <% end %>
+
+  <h5 style="text-align:right;">movies you want to watch</h5>
+</div>
